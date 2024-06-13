@@ -15,10 +15,10 @@ void printSortNumVecModulo(std::vector<int> vec, int val) {
   for (int count = vec.size() - 1; count >= 0; count--) {
     if (count == vec.size() - 1) {
       std::cout << vec[val] << " ";
-    } else if (i >= 0 && fabs(vec[i]) < fabs(vec[j])) {
+    } else if (i >= 0 && abs(vec[i]) < abs(vec[j])) {
       std::cout << vec[i] << " ";
       i--;
-    } else if (j < vec.size() && fabs(vec[i]) > fabs(vec[j])) {
+    } else if (j < vec.size() && abs(vec[i]) > abs(vec[j])) {
       std::cout << vec[j] << " ";
       j++;
     }
@@ -34,11 +34,11 @@ int main() {
   printVec(vec);
 
   int indexBegin = 0;
-  int begin = fabs(vec[0]);
+  int begin = abs(vec[0]);
 
   for (int i = 1; i < vec.size(); i++) {
-    if (begin > fabs(vec[i])) {
-      begin = fabs(vec[i]);
+    if (begin > abs(vec[i])) {
+      begin = abs(vec[i]);
       indexBegin = i;
     }
   }
